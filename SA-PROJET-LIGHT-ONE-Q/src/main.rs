@@ -73,17 +73,11 @@ fn run_quantum_search(dataset: &Vec<i32>, target: i32, iterations: u32) -> Optio
 }
 // QSA_alpha is the optimized alpha version of the quantum search algorithm
 fn run_QSA_alpha(dataset: &Vec<i32>, target: i32, iterations: u32) -> Option<i32> {
-    println!("Running QSA_alpha :)");
     let result = algorithms::quantum_search_algorithm_optimized::QSA_alpha(&dataset, target, iterations);
     result
 }
 
-fn multiple_run_quantum_search(dataset: &Vec<i32>, target: i32, iterations: u32) -> f64 {
-    let result = algorithms::quantum_search_algorithm::quantum_search_algorithm_wrapper(&dataset, target, iterations);
-    result
-}
-
 fn multiple_QSAlgorithm_run(dataset: &Vec<i32>, target: i32, iterations: u32) -> f64 {
-    let result = algorithms::algorithms_wrapper::quantum_search_algorithm_wrapper(&dataset, target, iterations);
+    let result = algorithms::algorithms_wrapper::_wrapper(&dataset, target, iterations);
     result
 }
