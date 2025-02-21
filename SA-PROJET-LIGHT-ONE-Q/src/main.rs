@@ -37,7 +37,6 @@ fn main() {
     println!("--------------------------------------------------------------------------------");
     */
 
-
     /* TEST FOR MULTIPLE RUNS */
     // Benchmark quantum search
     let start = Instant::now();
