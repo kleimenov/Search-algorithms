@@ -1,7 +1,9 @@
+// QSA_alpha v2 optimized version of the quantum search algorithm (Normalize probabilities to ensure they sum to 1.0 after amplifying the target probability)
 use rand::Rng;
 use std::collections::HashMap;
 
 pub fn QSA_alpha(dataset: &Vec<i32>, target: i32, iterations: u32) -> Option<i32> {
+    println!("Running QSA_alpha v2");
     let mut rng = rand::thread_rng();
     // Step 0: Initialize probabilities
     let mut probabilities: HashMap<usize, f64> = (0..dataset.len())

@@ -2,25 +2,11 @@
 The goal is to simulate quantum-like behavior on a classical computer to search unsorted datasets more efficiently.
 Specifically, we’ll take inspiration from Grover’s algorithm, which provides a quadratic speedup for searching unsorted databases in quantum computing.
 */
-
 use rand::Rng;
 use std::collections::HashMap;
 
-// function run quantum search algorithm 10 times and return accuracy of results
-pub fn quantum_search_algorithm_wrapper(dataset: &Vec<i32>, target: i32, iterations: u32) -> f64 {
-    let mut total_accuracy = 0.0;
- 
-    for _ in 0..10 {
-        let result = quantum_search(&dataset, target, iterations);
-        println!("Result gussed value as target: {:?}", result.unwrap());
-        let is_match = target == result.unwrap();
-        total_accuracy += is_match as i32 as f64;
-    }
-
-    total_accuracy / 10.0
-}
-
 pub fn quantum_search(dataset: &Vec<i32>, target: i32, iterations: u32) -> Option<i32> {
+    println!("Running QSA v1");
     let mut rng = rand::thread_rng(); // Random number generator
     // Step 0: Initialize probabilities
     let mut probabilities: HashMap<usize, f64> = (0..dataset.len()) 
